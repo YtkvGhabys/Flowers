@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receber Flores</title>
+    <style>
+        /* Estilização da página */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f7f9fc;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Container centralizado */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Container para a imagem e o texto "Aqui!" */
+        .flower-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            /* Inicia escondido */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        /* Mostra o elemento quando acionado via JS */
+        .flower-wrapper.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Estilo do texto "Aqui!" */
+        .label-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        /* Estilo da imagem da flor */
+        .flower-img {
+            max-width: 300px;
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Estilo do botão azul bebê */
+        .btn-receber {
+            background-color: #89CFF0; /* Azul bebê */
+            color: #000000;             /* Texto em preto */
+            border: none;
+            padding: 14px 28px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.1s ease, background-color 0.2s ease;
+        }
+
+        .btn-receber:hover {
+            background-color: #79BFDF;
+        }
+
+        .btn-receber:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- ÁREA DA FLOR E TEXTO (Escondida por padrão) -->
+        <div class="flower-wrapper" id="flowerContainer">
+            <span class="label-text">Aqui!</span>
+            <!-- Certifique-se de salvar a imagem da flor como "flor.jpg" na mesma pasta -->
+            <img src="1000295322.jpg" alt="Buquê de Flores de Origami Azul" class="flower-img">
+        </div>
+
+        <!-- BOTÃO RECEBER -->
+        <button class="btn-receber" id="btnReceber">Receber</button>
+    </div>
+
+    <script>
+        const btnReceber = document.getElementById('btnReceber');
+        const flowerContainer = document.getElementById('flowerContainer');
+
+        // Ação de clique no botão
+        btnReceber.addEventListener('click', () => {
+            flowerContainer.classList.add('visible');
+        });
+    </script>
+
+</body>
+</html>
